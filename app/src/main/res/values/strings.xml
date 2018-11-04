@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">projectCEM</string>
+    <string name="button_generate_graph">Generate Graph</string>
+    <string name="button_calculate_params">Calculate Params</string>
+</resources>
