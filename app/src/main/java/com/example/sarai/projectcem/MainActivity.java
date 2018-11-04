@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculateParameters(View view) {
-        // Do something in response to button
+        Intent intent = new Intent(this, DisplayFormActivity.class);
+        startActivity(intent);
     }
 }

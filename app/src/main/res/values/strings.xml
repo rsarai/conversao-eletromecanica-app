@@ -2,4 +2,19 @@
     <string name="app_name">projectCEM</string>
     <string name="button_generate_graph">Generate Graph</string>
     <string name="button_calculate_params">Calculate Params</string>
+    <string name="label_circuito_aberto">Circuito Aberto</string>
+    <string name="label_ca_tensao">Tensão:</string>
+    <string name="label_ca_corrente">Corrente:</string>
+    <string name="label_ca_potencia">Potência:</string>
+    <string name="label_curto_circuito">Curto-Circuito</string>
+    <string name="label_cc_tensao">Tensão:</string>
+    <string name="label_cc_corrente">Corrente:</string>
+    <string name="label_cc_potencia">Potência</string>
+    <string name="label_form_description">Medições dos ensaios de circuito aberto e curto-circuito.</string>
+    <string name="button_calculate_params_now">Calculate</string>
+    <string name="label_rc">"RC: "</string>
+    <string name="label_req">"Req: "</string>
+    <string name="label_xeq">"Xeq: "</string>
+    <string name="label_xm">"Xm: "</string>
+    <string name="label_results">Results</string>
 </resources>
