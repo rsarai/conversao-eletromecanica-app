@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     /** Called when the user taps the Generate Graph button */
     public void generateGraph(View view) {
-        Intent intent = new Intent(this, DisplayGraphActivity.class);
+        Intent intent = new Intent(this, GraphParamsActivity.class);
         startActivity(intent);
     }
 

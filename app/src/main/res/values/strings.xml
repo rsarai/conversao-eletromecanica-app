@@ -17,4 +17,13 @@
     <string name="label_xeq">"Xeq: "</string>
     <string name="label_xm">"Xm: "</string>
     <string name="label_results">Results</string>
+    <string name="label_vmax">"Vmax: "</string>
+    <string name="label_frequency">f:</string>
+    <string name="label_potencia_aparente">S:</string>
+    <string name="label_num_espiras_p">Np:</string>
+    <string name="label_num_espiras_s">Ns:</string>
+    <string name="label_comprimento">l:</string>
+    <string name="label_area">A:</string>
+    <string name="label_graph_params_text">Input the parameters to generate the graph</string>
+    <string name="button_graph_params_generate">Run</string>
 </resources>

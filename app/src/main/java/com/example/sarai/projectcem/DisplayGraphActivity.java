@@ -1,5 +1,6 @@
 package com.example.sarai.projectcem;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -15,6 +16,15 @@ public class DisplayGraphActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_graph);
+
+        Intent intent = getIntent();
+        String value_vmax = intent.getStringExtra(GraphParamsActivity.TENSAO_MAX);
+        String value_freq = intent.getStringExtra(GraphParamsActivity.FREQUENCIA);
+        String value_potencia = intent.getStringExtra(GraphParamsActivity.POTENCIA_APARENTE);
+        String value_np = intent.getStringExtra(GraphParamsActivity.ESPIRAS_PRIMARIO);
+        String value_ns = intent.getStringExtra(GraphParamsActivity.ESPIRAS_SECUNDARIO);
+        String value_comprimento = intent.getStringExtra(GraphParamsActivity.COMPRIMENTO_NUCLEO);
+        String value_area = intent.getStringExtra(GraphParamsActivity.AREA_NUCLEO);
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
         LineGraphSeries<DataPoint> seriesHVsB = new LineGraphSeries<>();
