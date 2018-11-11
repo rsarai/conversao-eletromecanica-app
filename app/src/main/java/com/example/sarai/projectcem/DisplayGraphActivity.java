@@ -124,8 +124,8 @@ public class DisplayGraphActivity extends AppCompatActivity {
 
     public static double timeVariable = 0.0001;
 
-    public double instantaneousFlow(double timeVariable, double tensao, double f) {
-        return tensao * Math.sin(2 * Math.PI * f * timeVariable);
+    public double instantaneousFlow(double timeVariable, double tensao, double f, double Np) {
+        return (1/Np) * tensao * Math.sin(2 * Math.PI * f * timeVariable);
     }
 
     public double getDensityFlow(double flow, double areaSecaoTransversalNucleo) {
@@ -174,7 +174,7 @@ public class DisplayGraphActivity extends AppCompatActivity {
         for (int i = 0; i < 1000; i++){
             int flag = 1;
             double time = timeVariable * i / 1000.0;
-            double valueInstantaneousFlow = instantaneousFlow(time, tensao, f);
+            double valueInstantaneousFlow = instantaneousFlow(time, tensao, f, Np);
             double b = getDensityFlow(valueInstantaneousFlow, areaSecaoTransversalNucleo);
 
             if (b < 0) {
