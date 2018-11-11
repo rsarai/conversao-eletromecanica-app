@@ -132,7 +132,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textSize="@dimen/small_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -145,7 +145,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textSize="@dimen/small_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText7" />
@@ -158,7 +158,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textSize="@dimen/small_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText8" />
@@ -171,7 +171,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textSize="@dimen/small_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText9" />
@@ -184,7 +184,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textSize="@dimen/small_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText10" />
@@ -197,7 +197,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textSize="@dimen/small_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText11" />
@@ -210,7 +210,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textSize="@dimen/small_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText12" />

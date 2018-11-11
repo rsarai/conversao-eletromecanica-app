@@ -1,5 +1,8 @@
 package com.example.sarai.projectcem.data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CastingCastIron {
     public static double[][] HBDATA = {
             {0, 0.000},
@@ -50,16 +53,69 @@ public class CastingCastIron {
             {123026, 1.832},
     };
 
-    public static double areaSecaoTransversalNucleo = 0.0008;
-    public static double lComprimentomMedioNucleo = 0.35;
-    public static double Np = 860;
-    public static int iterations = 1000;
+    public static double timeVariable = 0.0001;
 
-    public double get_density_of_flow(double flow) {
+    public double instantaneousFlow(double timeVariable) {
+        return 0.00145892031 * Math.sin(120 * Math.PI * timeVariable);
+    }
+
+    public double getDensityFlow(double flow, double areaSecaoTransversalNucleo) {
         return flow / areaSecaoTransversalNucleo;
     }
 
-    public double get_chain(double intensity_of_flow) {
+    public double getChain(double intensity_of_flow, double lComprimentomMedioNucleo, double Np) {
         return (intensity_of_flow * lComprimentomMedioNucleo)/Np;
+    }
+
+    public double getH(double b) {
+        for (int j = 0; j < HBDATA.length; j++) {
+            //se b estiver entre os 2 pontos de b da curva bh listada abaixo, é feita uma eq da reta
+            //pra determinar um valor aproximado de h. Lembrando que o valor de b na lista abaixo
+            // está na segunda posição do array
+            if (b < HBDATA[j + 1][1]) {
+                return interpolacao(HBDATA[j], HBDATA[j + 1], b);
+            }
+        }
+        return 0;
+    }
+
+    public double interpolacao(double[] p1, double[] p2, double value) {
+        //encontrar a equacao da reta y = mx + b e encontrar o valor de H nessa reta partindo do valor
+        double m = (p2[0] - p1[0]) / (p2[1] - p1[1]); // m = y2 - y1 / x2 - x1
+        double b = p1[0] - p1[1] * m; // b = y - mx
+
+        return value * m + b; // retorna y(value)
+    }
+
+    public List<Double> getGraphParametersTimeDomain(){
+        List<Double> timeDomain = new ArrayList<>();
+
+        for (int i = 0; i < 1000; i++){
+            double time = timeVariable * i / 1000.0;
+            timeDomain.add(time);
+        }
+        return timeDomain;
+    }
+
+    public List<Double> getGraphParametersCorrenteDomain(double areaSecaoTransversalNucleo,
+                                                        double lComprimentomMedioNucleo, double Np){
+        List<Double> correnteDomain = new ArrayList<>();
+
+        for (int i = 0; i < 1000; i++){
+            int flag = 1;
+            double time = timeVariable * i / 1000.0;
+            double valueInstantaneousFlow = instantaneousFlow(time);
+            double b = getDensityFlow(valueInstantaneousFlow, areaSecaoTransversalNucleo);
+
+            if (b < 0) {
+                flag = -1;
+                b = b * flag;
+            }
+
+            double h = getH(b);
+            correnteDomain.add(getChain(h, lComprimentomMedioNucleo, Np) * flag);
+        }
+
+        return correnteDomain;
     }
 }
