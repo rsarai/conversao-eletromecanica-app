@@ -41,20 +41,25 @@ public class DisplayGraphActivity extends AppCompatActivity {
 
         double value_a;
         double value_l;
-        double value_np_;
+        double value_np_, v_tensao, v_freq;
 
         if (value_area.equals("") || value_comprimento.equals("") || value_np.equals("")) {
             value_a = 0.0008;
             value_l = 0.35;
             value_np_ = 400;
+            v_tensao = 40;
+            v_freq = 60;
         } else {
             value_a = Double.parseDouble(value_area);
             value_l = Double.parseDouble(value_comprimento);
             value_np_ = Double.parseDouble(value_np);
+            v_tensao = Double.parseDouble(value_vmax);
+            v_freq = Double.parseDouble(value_freq);
         }
 
         List<Double> timeDomain = getGraphParametersTimeDomain();
-        List<Double> correnteDomain = getGraphParametersCorrenteDomain(value_a, value_l, value_np_);
+        List<Double> correnteDomain = getGraphParametersCorrenteDomain(
+                value_a, value_l, value_np_, v_tensao, v_freq);
 
         for (int i = 0; i < correnteDomain.size(); i++) {
             seriesHVsB.appendData(new DataPoint(i, correnteDomain.get(i)),
@@ -119,8 +124,8 @@ public class DisplayGraphActivity extends AppCompatActivity {
 
     public static double timeVariable = 0.0001;
 
-    public double instantaneousFlow(double timeVariable) {
-        return 0.00145892031 * Math.sin(120 * Math.PI * timeVariable);
+    public double instantaneousFlow(double timeVariable, double tensao, double f) {
+        return tensao * Math.sin(2 * Math.PI * f * timeVariable);
     }
 
     public double getDensityFlow(double flow, double areaSecaoTransversalNucleo) {
@@ -162,13 +167,14 @@ public class DisplayGraphActivity extends AppCompatActivity {
     }
 
     public List<Double> getGraphParametersCorrenteDomain(double areaSecaoTransversalNucleo,
-                                                         double lComprimentomMedioNucleo, double Np){
+                                                         double lComprimentomMedioNucleo, double Np,
+                                                         double tensao, double f){
         List<Double> correnteDomain = new ArrayList<>();
 
         for (int i = 0; i < 1000; i++){
             int flag = 1;
             double time = timeVariable * i / 1000.0;
-            double valueInstantaneousFlow = instantaneousFlow(time);
+            double valueInstantaneousFlow = instantaneousFlow(time, tensao, f);
             double b = getDensityFlow(valueInstantaneousFlow, areaSecaoTransversalNucleo);
 
             if (b < 0) {
