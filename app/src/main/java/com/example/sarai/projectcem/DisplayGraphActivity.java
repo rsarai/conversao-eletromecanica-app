@@ -137,7 +137,7 @@ public class DisplayGraphActivity extends AppCompatActivity {
     }
 
     public double getH(double b) {
-        for (int j = 0; j < HBDATA.length; j++) {
+        for (int j = 0; j < HBDATA.length - 1; j++) {
             //se b estiver entre os 2 pontos de b da curva bh listada abaixo, é feita uma eq da reta
             //pra determinar um valor aproximado de h. Lembrando que o valor de b na lista abaixo
             // está na segunda posição do array
