@@ -46,8 +46,8 @@ public class DisplayParametersActivity extends AppCompatActivity {
 
     public String[] get_results(String ca_corrente, String ca_tensao, String ca_potencia,
                               String cc_potencia, String cc_tensao, String cc_corrente) {
-        if (ca_corrente == null || ca_tensao == null || ca_potencia == null ||
-                cc_potencia == null || cc_tensao == null || cc_corrente == null){
+        if (ca_corrente.equals("") || ca_tensao.equals("") || ca_potencia.equals("") ||
+                cc_potencia.equals("") || cc_tensao.equals("") || cc_corrente.equals("")){
             return null;
         }
         double value_ca_corrente = Double.parseDouble(ca_corrente);
