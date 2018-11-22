@@ -160,7 +160,7 @@ public class DisplayGraphActivity extends AppCompatActivity {
         List<Double> timeDomain = new ArrayList<>();
 
         for (int i = 0; i < 1000; i++){
-            double time = timeVariable * i / 1000.0;
+            double time = timeVariable * i;
             timeDomain.add(time);
         }
         return timeDomain;
@@ -173,7 +173,7 @@ public class DisplayGraphActivity extends AppCompatActivity {
 
         for (int i = 0; i < 1000; i++){
             int flag = 1;
-            double time = timeVariable * i / 1000.0;
+            double time = timeVariable * i;
             double valueInstantaneousFlow = instantaneousFlow(time, tensao, f, Np);
             double b = getDensityFlow(valueInstantaneousFlow, areaSecaoTransversalNucleo);
 
