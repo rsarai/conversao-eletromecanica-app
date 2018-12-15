@@ -43,7 +43,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DisplayFormActivity" />
         </activity>
-        <activity android:name=".GraphParamsActivity"
+        <activity
+            android:name=".GraphParamsActivity"
             android:parentActivityName=".MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
@@ -51,6 +52,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity
+            android:name=".CAMachineFormActivity"
+            android:label="@string/title_activity_camachine_form"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CAMachineGraphActivity"
+            android:label="@string/title_activity_camachine_graph"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -26,4 +26,16 @@
     <string name="label_area">A:</string>
     <string name="label_graph_params_text">Input the parameters to generate the graph</string>
     <string name="button_graph_params_generate">Run</string>
+    <string name="label_ca_machine">CA Machine</string>
+    <string name="title_activity_camachine_form">CAMachineFormActivity</string>
+    <string name="label_ca_machine_graph">Go!</string>
+    <string name="title_activity_camachine_graph">CAMachineGraphActivity</string>
+    <string name="label_r1">r1:</string>
+    <string name="label_x1">x1:</string>
+    <string name="label_x2">x2:</string>
+    <string name="label_r2">r2:</string>
+    <string name="labelxm">xm:</string>
+    <string name="label_v_phase">v_phase:</string>
+    <string name="label_n_sync">n_sync:</string>
+    <string name="label_w_sync">w_sync:</string>
 </resources>

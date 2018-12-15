@@ -23,4 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayFormActivity.class);
         startActivity(intent);
     }
+
+    public void caMachineActivity(View view) {
+        Intent intent = new Intent(this, CAMachineFormActivity.class);
+        startActivity(intent);
+    }
 }
